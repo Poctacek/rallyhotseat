@@ -1,1 +1,58 @@
-/* nothing here yet */
+:root {
+--background: #505050;
+--text-color: #ffffff;
+--card-bg: #333333;
+--highlight: #ffcc00;
+--error: #ff4d4d;
+--bronze: #cd7f32;
+--silver: #c0c0c0;
+--gold: #ffd700;
+}
+
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-color)
+}
+
+#app {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary);
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    animation: fadeIn 0.8s ease;
+}
+
+
+
+section h2 {
+    margin-bottom: 15px;
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+    display: inline-block;
+    padding-bottom: 5px;
+}

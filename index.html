@@ -3,8 +3,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rally Hot-Seat Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    Hello World!
+    <div id="app">
+    <header>
+        <h1>Rally Hot-Seat</h1>
+    </header>
+
+    <main>
+        <section id="driversSection">
+            <h2>Add Drivers</h2>
+            <input type="text" id="addDriverInput" placeholder="Enter driver name (press Enter to add)">
+            <ul id="driversList"></ul>
+        </section>
+
+
+        <section id="roundSection">
+            <h2>Start Round</h2>
+            <input type="text" id="stageInput" placeholder="Enter Stage Name">
+            <input type="text" id="carInput" placeholder="Enter Car Name">
+            <button id="startRoundButton">Start Round</button>
+            <!-- For now, I have to have the finish race button here, because of an issue where it disappears anywhere else-->
+            <button id="finishRaceButton" class="always-visible">Finish Race</button> 
+        </section>
+
+        <section id="timesSection" class="hidden">
+            <h2>Enter Times</h2>
+            <div id="timesList"></div>
+            <button id="finishRoundButton">Finish This Round</button>
+        </section>
+
+
+        <section id="resultsSection">
+            <h2>Results</h2>
+            <div id="results"></div>
+        </section>
+
+
+    </main>
+</div>
 </body>
 </html>
