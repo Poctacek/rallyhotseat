@@ -1,7 +1,7 @@
  // data
- let drivers = [];
- let rounds = [];
- let currentRound = null;
+let drivers = [];
+let rounds = [];
+let currentRound = null;
 
 const driverInput = document.getElementById("addDriverInput");
 const driversList = document.getElementById("driversList");
@@ -16,8 +16,8 @@ const resultsDiv = document.getElementById("results");
 
 // Add driver
 driverInput.addEventListener("keydown", e => {
-    if (e.key === "Enter" && driverInput.ariaValueMax.trim() !== "") {
-        drivers.push({ name: driverInput.ariaValueMax.trim(), totalTime: 0});
+    if (e.key === "Enter" && driverInput.value.trim() !== "") {
+        drivers.push({ name: driverInput.value.trim(), totalTime: 0});
         driverInput.value = "";
         renderDrivers();
     }
@@ -57,7 +57,7 @@ function renderTimeInputs() {
         div.innerHTML = `
         <strong>${driver.name}</strong>
         <input type="text" placeholder="00:00:000" data-driver="${driver.name}" value="00:00:000">
-        <button class="dsq-btn" dataj-driver="${driver.name}">DSQ</button>
+        <button class="dsq-btn" data-driver="${driver.name}">DSQ</button>
         `;
         const input = div.querySelector("input");
         const dsqBtn = div.querySelector(".dsq-btn");
@@ -66,16 +66,17 @@ function renderTimeInputs() {
             if(ev.key==="Enter") addTime(driver.name, input);
         });
 
-        dsqBtn.addEventListener("click", () => input.value="15:00?000");
+        dsqBtn.addEventListener("click", () => input.value="15:00:000");
         timesList.appendChild(div);
     });
 }
 
 function addTime(name, input) {
     let raw = input.value.trim();
-    let time = raw==="15:00:000" ? 15*60000 : parseTime(raw);
+    let parsed = raw === "15:00:000" ? 15 * 60000 : parseTime(raw);
+    let time = (typeof parsed === 'number' && !isNaN(parsed)) ? parsed : 0;
 
-    currentRound.times = currentRound.times.filter(e=>e.name!==name);
+    currentRound.times = currentRound.times.filter(e => e.name !== name);
     currentRound.times.push({ name, time, raw });
 }
 
@@ -97,3 +98,57 @@ finishRoundButton.addEventListener("click", () => {
 });
 
  // render rounds
+function renderRounds() {
+    resultsDiv.innerHTML = "";
+    rounds.forEach(round => {
+        const block = document.createElement("div");
+        block.innerHTML = `<h3>${round.stage} - ${round.car}</h3>`;
+        round.times.forEach((entry, index) => {
+            const div = document.createElement("div");
+            div.className = `result-row ${["first", "second", "third"][index] || ""}`;
+            div.textContent = `${index+1}. ${entry.name} (${entry.time===15*60000 ? "DSQ" : entry.raw})`;
+            block.appendChild(div);
+        });
+        resultsDiv.appendChild(block);
+    });
+}
+
+
+// finish race
+finishRaceButton.addEventListener("click", () => {
+    const finalResults = drivers.map(driver => {
+        const total = rounds.reduce((sum, round) => {
+            const e = round.times.find(t => t.name === driver.name);
+            return sum + (e ? e.time : 0);
+        }, 0);
+        return { name: driver.name, totalTime: total };
+    });
+
+    finalResults.sort((a, b) => a.totalTime - b.totalTime);
+    const block = document.createElement("div");
+    block.innerHTML = `<h2>Final Results</h2>`;
+    finalResults.forEach((entry, index) => {
+        const div = document.createElement("div");
+        div.className = `result-row ${["first", "second", "third"][index] || ""}`;
+        div.textContent = `${index+1}. ${entry.name} (${formatTime(entry.totalTime)})`;
+        block.appendChild(div);
+    });
+    resultsDiv.prepend(block);
+});
+
+// utils
+
+function parseTime(input) {
+    const parts = input.split(":");
+    if(parts.length !== 3) return null;
+    const [m, s, ms] = parts.map(Number);
+    return m*60000 + s*1000 + ms;
+}
+
+
+function formatTime(ms) {
+    const m = Math.floor(ms / 60000);
+    const s = Math.floor((ms % 60000) / 1000);
+    const milli = ms % 1000;
+    return `${m}:${s.toString().padStart(2,"0")}:${milli.toString().padStart(3,"0")}`;
+}
