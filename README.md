@@ -54,13 +54,13 @@ No frameworks. No dependencies. Pure front-end.
 
 ## 🔮 Planned Improvements
 
-- [ up next ] **Customizable DSQ time**  
+- [ ] **Customizable DSQ time**  
 - [ ] **Proper DSQ logic handling** 
 - [ ] **Cleaner animation system**  
 - [ ] **Refactored gradients & styling**
 - [ ] **UI polish** 
 - [ ]**Codebase cleanup**  
-*this project is only in it's starting stages, and I don't have much time cuz of school, so don't expect updates on a regular basis :(*
+
 ---
 
 ## 📷 Preview
@@ -75,3 +75,5 @@ No frameworks. No dependencies. Pure front-end.
 ## 📜 License
 
 Open-source. Use, modify, improve. :)
+
+- *this project is only in it's starting stages, and I don't have much time cuz of school, so don't expect updates on a regular basis :(*
