@@ -59,7 +59,7 @@ No frameworks. No dependencies. Pure front-end.
 - [ ] **Cleaner animation system**  
 - [ ] **Refactored gradients & styling**
 - [ ] **UI polish** 
-- [ ]**Codebase cleanup**  
+- [ ] **Codebase cleanup** 
 
 ---
 
@@ -75,5 +75,6 @@ No frameworks. No dependencies. Pure front-end.
 ## 📜 License
 
 Open-source. Use, modify, improve. :)
+
 
 - *this project is only in it's starting stages, and I don't have much time cuz of school, so don't expect updates on a regular basis :(*
