@@ -332,7 +332,7 @@ function calculateOverallStandings() {
     return standingsArray;
 }
 
-// Show final results modal with time differences
+// Show final results modal with time differences - WITH INLINE STYLES FOR BLACK TEXT
 function showFinalResults(standings) {
     finalResultsBody.innerHTML = '';
     
@@ -356,18 +356,19 @@ function showFinalResults(standings) {
             timeDiff = `(+${formatTimeExtended(diffMs)})`;
         }
         
-        // Add DSQ notation if applicable
+        // Add DSQ notation if applicable (keep red color for DSQ)
         let dsqNotation = '';
         if (entry.dsqCount > 0) {
-            dsqNotation = ` <span style="color: var(--error); font-size: 0.95rem; font-weight: 600;">[${entry.dsqCount} DSQ]</span>`;
+            dsqNotation = ` <span style="color: #ff4444; font-size: 0.95rem; font-weight: 600;">[${entry.dsqCount} DSQ]</span>`;
         }
         
+        // IMPORTANT: Use inline styles to FORCE black text on medals
         div.innerHTML = `
-            <span class="final-result-position">${index + 1}.</span>
-            <span class="final-result-name">${entry.driver}${dsqNotation}</span>
-            <span class="final-result-time">
-                <span class="final-result-total">${entry.formattedTime}</span>
-                <span class="final-result-diff">${timeDiff}</span>
+            <span class="final-result-position" style="color: #000000 !important;">${index + 1}.</span>
+            <span class="final-result-name" style="color: #000000 !important;">${entry.driver}${dsqNotation}</span>
+            <span class="final-result-time" style="color: #000000 !important;">
+                <span class="final-result-total" style="color: #000000 !important;">${entry.formattedTime}</span>
+                <span class="final-result-diff" style="color: #000000 !important; opacity: 0.8;">${timeDiff}</span>
             </span>
         `;
         standingsDiv.appendChild(div);

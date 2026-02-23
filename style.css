@@ -42,14 +42,14 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     padding: 24px;
     position: relative;
     overflow-x: hidden;
 }
 
-/* Racing stripes background effect - keep this */
 body::before {
     content: '';
     position: fixed;
@@ -64,8 +64,6 @@ body::before {
     z-index: 1000;
     box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
 }
-
-/* REMOVE the body::after entirely or set to display: none */
 
 body::after {
     content: '';
@@ -94,6 +92,7 @@ header {
     text-align: center;
     margin-bottom: 32px;
     position: relative;
+    z-index: 10;
 }
 
 header h1 {
@@ -125,11 +124,11 @@ header h1::after {
     border-radius: 2px;
 }
 
-/* Main Layout */
 main {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    width: 100%;
 }
 
 @media (min-width: 960px) {
@@ -155,7 +154,6 @@ main {
     }
 }
 
-/* Section Cards */
 section {
     background: var(--card-bg);
     border-radius: 16px;
@@ -215,7 +213,6 @@ section h2::after {
         transparent 100%);
 }
 
-/* Finish Race Section - Special Styling */
 .finish-race-section {
     background: linear-gradient(135deg, rgba(255, 107, 0, 0.15) 0%, var(--card-bg) 100%);
     border: 3px solid var(--primary);
@@ -234,7 +231,6 @@ section h2::after {
     font-size: 1.05rem;
 }
 
-/* Input Group for Add Driver */
 .input-group {
     display: flex;
     gap: 10px;
@@ -257,7 +253,6 @@ section h2::after {
     background: var(--success-hover);
 }
 
-/* Input Fields */
 input[type="text"] {
     width: 100%;
     padding: 12px 16px;
@@ -283,7 +278,6 @@ input[type="text"]::placeholder {
     font-weight: 400;
 }
 
-/* Buttons */
 button {
     padding: 12px 24px;
     border-radius: 10px;
@@ -342,7 +336,6 @@ button:active {
     background: var(--secondary-hover);
 }
 
-/* Finish Race Button - More Visible in separate section */
 .finish-race-btn {
     display: block;
     width: 100%;
@@ -381,7 +374,6 @@ button:active {
     background: var(--error-hover);
 }
 
-/* Remove Button */
 .remove-btn {
     background: var(--error);
     padding: 6px 12px;
@@ -393,7 +385,6 @@ button:active {
     background: var(--error-hover);
 }
 
-/* Delete Round Button */
 .delete-round-btn {
     background: var(--error);
     padding: 8px 14px;
@@ -407,7 +398,6 @@ button:active {
     background: var(--error-hover);
 }
 
-/* Drivers List */
 ul {
     list-style: none;
     padding: 0;
@@ -442,7 +432,6 @@ li span {
     flex: 1;
 }
 
-/* Round Info Display */
 .round-info {
     display: flex;
     gap: 12px;
@@ -476,7 +465,6 @@ li span {
     text-transform: uppercase;
 }
 
-/* Times Input Section */
 #timesSection {
     margin-bottom: 24px;
     border: 2px solid var(--secondary);
@@ -530,7 +518,6 @@ li span {
     background: var(--primary-hover);
 }
 
-/* Results Section */
 #resultsSection {
     max-height: calc(100vh - 120px);
     overflow-y: auto;
@@ -580,7 +567,6 @@ li span {
     border-color: var(--primary);
 }
 
-/* Round Header with Stage and Car Info */
 .round-header {
     display: flex;
     gap: 12px;
@@ -651,7 +637,7 @@ li span {
 
 .first {
     background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
-    color: #1a1a1a;
+    color: #000000;
     border-color: #ffd700;
     box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
     animation: pulse 2s infinite;
@@ -659,19 +645,39 @@ li span {
 
 .second {
     background: linear-gradient(135deg, var(--silver) 0%, #e0e0e0 100%);
-    color: #1a1a1a;
+    color: #000000;
     border-color: #c0c0c0;
     box-shadow: 0 4px 16px rgba(192, 192, 192, 0.4);
 }
 
 .third {
     background: linear-gradient(135deg, var(--bronze) 0%, #e09856 100%);
-    color: #1a1a1a;
+    color: #000000;
     border-color: #cd7f32;
     box-shadow: 0 4px 16px rgba(205, 127, 50, 0.4);
 }
 
-/* Modal Styles */
+.toggle-standings-btn {
+    width: 100%;
+    background: var(--secondary);
+    margin-top: 16px;
+    font-size: 1rem;
+    padding: 12px 24px;
+}
+
+.toggle-standings-btn:hover {
+    background: var(--secondary-hover);
+}
+
+.overall-standings-container {
+    margin-top: 24px;
+    border: 3px solid var(--highlight);
+}
+
+.overall-standings-container.hidden {
+    display: none;
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -770,92 +776,6 @@ li span {
 
 .final-result-row {
     padding: 16px 20px;
-    font-size: 1.3rem;
-    font-weight: 800;
-    border-radius: 12px;
-    margin: 12px 0;
-    transition: all 0.3s ease;
-    border: 3px solid transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.final-result-row:hover {
-    transform: scale(1.03);
-    box-shadow: var(--shadow-lg);
-}
-
-.modal-footer {
-    padding: 20px 24px;
-    background: var(--background-secondary);
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-}
-
-.close-modal-btn {
-    background: var(--success);
-    font-size: 1.2rem;
-    padding: 14px 32px;
-    width: 100%;
-    max-width: 400px;
-}
-
-.close-modal-btn:hover {
-    background: var(--success-hover);
-}
-/* Add these new styles */
-
-/* Toggle Overall Standings Button */
-.toggle-standings-btn {
-    width: 100%;
-    background: var(--secondary);
-    margin-top: 16px;
-    font-size: 1rem;
-    padding: 12px 24px;
-}
-
-.toggle-standings-btn:hover {
-    background: var(--secondary-hover);
-}
-
-.overall-standings-container {
-    margin-top: 24px;
-    border: 3px solid var(--highlight);
-}
-
-.overall-standings-container.hidden {
-    display: none;
-}
-
-/* Modal Button Group */
-.modal-button-group {
-    display: flex;
-    gap: 12px;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.continue-race-btn {
-    background: var(--secondary);
-    font-size: 1.1rem;
-    padding: 14px 24px;
-    flex: 1;
-    min-width: 200px;
-}
-
-.continue-race-btn:hover {
-    background: var(--secondary-hover);
-}
-
-.close-modal-btn {
-    flex: 1;
-    min-width: 200px;
-}
-
-/* Final Results Styling - Better spacing */
-.final-result-row {
-    padding: 16px 20px;
     font-size: 1.2rem;
     font-weight: 800;
     border-radius: 12px;
@@ -866,6 +786,11 @@ li span {
     grid-template-columns: auto 1fr auto;
     gap: 20px;
     align-items: center;
+}
+
+.final-result-row:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
 }
 
 .final-result-position {
@@ -899,34 +824,48 @@ li span {
     font-weight: 600;
 }
 
-/* Responsive modal buttons */
-@media (max-width: 640px) {
-    .modal-button-group {
-        flex-direction: column;
-    }
-    
-    .continue-race-btn,
-    .close-modal-btn {
-        width: 100%;
-        min-width: 100%;
-    }
-    
-    .final-result-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        text-align: center;
-    }
-    
-    .final-result-time {
-        align-items: center;
-    }
+.modal-footer {
+    padding: 20px 24px;
+    background: var(--background-secondary);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
 }
-/* Utility Classes */
+
+.modal-button-group {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.continue-race-btn {
+    background: var(--secondary);
+    font-size: 1.1rem;
+    padding: 14px 24px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.continue-race-btn:hover {
+    background: var(--secondary-hover);
+}
+
+.close-modal-btn {
+    background: var(--success);
+    font-size: 1.2rem;
+    padding: 14px 32px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.close-modal-btn:hover {
+    background: var(--success-hover);
+}
+
 .hidden {
     display: none !important;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -967,7 +906,6 @@ li span {
     }
 }
 
-/* Responsive Design */
 @media (max-width: 959px) {
     body {
         padding: 16px;
@@ -1065,9 +1003,28 @@ li span {
     .race-control-text {
         font-size: 0.95rem;
     }
+
+    .modal-button-group {
+        flex-direction: column;
+    }
+    
+    .continue-race-btn,
+    .close-modal-btn {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .final-result-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .final-result-time {
+        align-items: center;
+    }
 }
 
-/* Print Styles */
 @media print {
     body {
         background: white;
@@ -1090,18 +1047,24 @@ li span {
     }
 }
 
+footer {
+    margin-top: auto;
+    padding-top: 40px;
+    width: 100%;
+}
 
 .note {
-    size: 2px;
-    font-family:sans-serif;
+    font-size: 0.8rem;
+    font-family: sans-serif;
     color: gray;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .github-hosting {
     position: fixed;
     bottom: 5px;
     left: 5px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -1117,13 +1080,15 @@ li span {
     user-select: none;
     cursor: default;
 }
+
 .github-hosting a {
     display: inline-block;
 }
+
 .github-hosting a:hover .github-icon {
-    
     transform: scale(1.12);
 }
+
 .github-icon {
     width: 35px;
     height: 35px;
@@ -1134,5 +1099,48 @@ li span {
 }
 
 .github-icon:hover {
-    filter: grayscale(0%); /* barevná při hoveru */
+    filter: grayscale(0%);
+}
+
+/* CRITICAL: Force black text on medals - MUST BE AT THE END */
+.result-row.first,
+.result-row.first *,
+.results-row.first,
+.results-row.first *,
+.final-result-row.first,
+.final-result-row.first *,
+.final-result-row.first .final-result-position,
+.final-result-row.first .final-result-name,
+.final-result-row.first .final-result-time,
+.final-result-row.first .final-result-total,
+.final-result-row.first .final-result-diff {
+    color: #000000 !important;
+}
+
+.result-row.second,
+.result-row.second *,
+.results-row.second,
+.results-row.second *,
+.final-result-row.second,
+.final-result-row.second *,
+.final-result-row.second .final-result-position,
+.final-result-row.second .final-result-name,
+.final-result-row.second .final-result-time,
+.final-result-row.second .final-result-total,
+.final-result-row.second .final-result-diff {
+    color: #000000 !important;
+}
+
+.result-row.third,
+.result-row.third *,
+.results-row.third,
+.results-row.third *,
+.final-result-row.third,
+.final-result-row.third *,
+.final-result-row.third .final-result-position,
+.final-result-row.third .final-result-name,
+.final-result-row.third .final-result-time,
+.final-result-row.third .final-result-total,
+.final-result-row.third .final-result-diff {
+    color: #000000 !important;
 }
