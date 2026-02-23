@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,44 +6,100 @@
     <title>Rally Hot-Seat Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!--
+> DSQ is concidered 15:00:000 (this will be customizable )
+> rn some of the css and animations are still ai slop, I remade most but i will be remaking it further on as well. Mostly the gradients and animations are shit, but that will be gone in due time
+> also u can not have DSQ at all the racers, the program will not let you finish the race this way (will be fixed in the future) >> workaround - type 15:00:000 instead of DSQ in the line
+
+> The website works like this:
+                            - You add your racers
+                            - You start a round by stating the car and the stage name (or country name)
+                            - a box will pop up, where you put the times of the players in this format - 00:00:000
+                            - then you finish the round and create another one
+                            - after you finished all your games, you can finish the race
+                            - a popup will show you your times and differences
+                            - then you can either clear all the races or go back to the race
+
+
+
+
+-->
+
+
 <body>
     <div id="app">
-    <header>
-        <h1>Rally Hot-Seat</h1>
-    </header>
+        <header>
+            <h1>Rally Hot-Seat</h1>
+        </header>
 
-    <main>
-        <section id="driversSection">
-            <h2>Add Drivers</h2>
-            <input type="text" id="addDriverInput" placeholder="Enter driver name (press Enter to add)">
-            <ul id="driversList"></ul>
-        </section>
+        <main>
+            <section id="driversSection">
+                <h2>Add Drivers</h2>
+                <div class="input-group">
+                    <input type="text" id="addDriverInput" placeholder="Enter driver name">
+                    <button id="addDriverButton" class="add-btn">Add Driver</button>
+                </div>
+                <ul id="driversList"></ul>
+            </section>
 
+            <section id="roundSection">
+                <h2>Start Round</h2>
+                <input type="text" id="stageInput" placeholder="Enter Stage Name">
+                <input type="text" id="carInput" placeholder="Enter Car Name">
+                <button id="startRoundButton">Start Round</button>
+            </section>
 
-        <section id="roundSection">
-            <h2>Start Round</h2>
-            <input type="text" id="stageInput" placeholder="Enter Stage Name">
-            <input type="text" id="carInput" placeholder="Enter Car Name">
-            <button id="startRoundButton">Start Round</button>
-            <!-- For now, I have to have the finish race button here, because of an issue where it disappears anywhere else-->
-            <button id="finishRaceButton" class="always-visible">Finish Race</button> 
-        </section>
+            
+            <section id="finishRaceSection" class="hidden finish-race-section">
+                <h2> Race Control</h2>
+                <p class="race-control-text">Ready to end the race and see final results?</p>
+                <button id="finishRaceButton" class="finish-race-btn">
+                    Finish Race & View Final Results
+                </button>
+            </section>
 
-        <section id="timesSection" class="hidden">
-            <h2>Enter Times</h2>
-            <div id="timesList"></div>
-            <button id="finishRoundButton">Finish This Round</button>
-        </section>
+            <section id="timesSection" class="hidden">
+                <h2>Enter Times</h2>
+                <div id="roundInfo" class="round-info"></div>
+                <div id="timesList"></div>
+                <button id="finishRoundButton">Finish This Round</button>
+            </section>
 
+            <section id="resultsSection">
+                <h2>Results</h2>
+                <div id="results"></div>
+            </section>
+        </main>
+    </div>
 
-        <section id="resultsSection">
-            <h2>Results</h2>
-            <div id="results"></div>
-        </section>
+    <!-- Final Results Modal -->
+    <div id="finalResultsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Race Results</h2>
+            </div>
+            <div class="modal-body" id="finalResultsBody"></div>
+        <div class="modal-footer">
+    <div class="modal-button-group">
+        <button id="continueRaceButton" class="continue-race-btn">← Continue Race</button>
+        <button id="closeModalButton" class="close-modal-btn">Start New Race</button>
+    </div>
+        </div>
+        </div>
+    </div>
 
-
-    </main>
-</div>
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
+<footer>
+    <div class="note">
+    *DSQ is concidered 15 minutes at this point.
+    </div>
+    <div class="github-hosting">
+        <span class="github-text">This website is being hosted by GitHub</span>
+        <a href="https://github.com/poctacek" target="_blank">
+        <img src="./img/github_logo.png" alt="GitHub" class="github-icon">
+        </a>
+    </div>
+</footer>
+
 </html>
