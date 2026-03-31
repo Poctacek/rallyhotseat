@@ -30,6 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDrivers();
     renderResults();
     
+    // reset button
+    document.getElementById('resetAllButton').addEventListener('click', () => {
+        if (confirm('Reset everything? This will clear all drivers, rounds and data. \n This cannot be undone!')){
+            drivers = [];
+            resetRace();
+            renderDrivers();
+            saveToLocalStorage();
+}
+}
+);
+    
+
+
+
+
+
+
+
     // Event listeners
     addDriverButton.addEventListener('click', addDriver);
     addDriverInput.addEventListener('keypress', (e) => {
@@ -362,15 +380,21 @@ function showFinalResults(standings) {
             dsqNotation = ` <span style="color: #ff4444; font-size: 0.95rem; font-weight: 600;">[${entry.dsqCount} DSQ]</span>`;
         }
         
-        // IMPORTANT: Use inline styles to FORCE black text on medals
-        div.innerHTML = `
-            <span class="final-result-position" style="color: #000000 !important;">${index + 1}.</span>
-            <span class="final-result-name" style="color: #000000 !important;">${entry.driver}${dsqNotation}</span>
-            <span class="final-result-time" style="color: #000000 !important;">
-                <span class="final-result-total" style="color: #000000 !important;">${entry.formattedTime}</span>
-                <span class="final-result-diff" style="color: #000000 !important; opacity: 0.8;">${timeDiff}</span>
+        
+        const isTop3 = index < 3;
+        const textColor = isTop3 ? 'color: #000000 !important;' : 'color: #ffffff !important;';
+
+
+
+            div.innerHTML = `
+            <span class="final-result-position" style="${textColor}">${index + 1}.</span>
+            <span class="final-result-name" style="${textColor}">${entry.driver}${dsqNotation}</span>
+            <span class="final-result-time" style="${textColor}">
+                <span class="final-result-total" style="${textColor}">${entry.formattedTime}</span>
+                <span class="final-result-diff" style="${textColor} opacity: 0.8;">${timeDiff}</span>
             </span>
         `;
+        
         standingsDiv.appendChild(div);
     });
     

@@ -4,6 +4,8 @@ A lightweight browser-based rally timing manager for local hot-seat races.
 
 Designed for quick stage tracking between friends without spreadsheets or external tools.
 
+
+<img src="./img/hotseat.png" alt="logo" width="500">
 ---
 
 ## 📌 Overview
@@ -37,6 +39,8 @@ A modal will display final times and time gaps
 ## 🚫 DSQ Handling
 
 - `DSQ` is currently treated as **15:00:000**
+- You cannot DSQ all drivers (race cannot finish)
+- Temporary workaround: Instead of typing `DSQ`, enter: `15:00:000`
 
 (Custom DSQ logic is planned for future updates.)
 
@@ -54,10 +58,10 @@ No frameworks. No dependencies. Pure front-end.
 
 - [ ] **Customizable DSQ time**  
 - [ ] **Proper DSQ logic handling** 
-- [ ] **Cleaner animation system**  
-- [ ] **Refactored gradients & styling**
-- [ ] **UI polish** 
-- [ ] **Codebase cleanup** 
+- [x] **Cleaner animation system**  
+- [x] **Refactored gradients & styling**
+- [x] **UI polish** 
+- [x]**Codebase cleanup**  
 
 ---
 
@@ -74,6 +78,4 @@ No frameworks. No dependencies. Pure front-end.
 
 Open-source. Use, modify, improve. :)
 
-
 - *this project is only in it's starting stages, and I don't have much time cuz of school, so don't expect updates on a regular basis :(*
-

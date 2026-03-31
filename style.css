@@ -37,6 +37,7 @@ html {
 
 body {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #0a0e14;
     background: linear-gradient(135deg, #0a0e14 0%, #1a1f2e 50%, #0a0e14 100%);
     color: var(--text-color);
     line-height: 1.6;
@@ -64,7 +65,7 @@ body::before {
     z-index: 1000;
     box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
 }
-
+/* The grid background does not yet work :( */
 body::after {
     content: '';
     position: fixed;
@@ -72,9 +73,10 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    /*background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    */
     background-size: 50px 50px;
     pointer-events: none;
     z-index: 0;
@@ -85,7 +87,7 @@ body::after {
     max-width: 1400px;
     position: relative;
     z-index: 1;
-    animation: fadeIn 0.6s ease-out;
+    
 }
 
 header {
@@ -179,7 +181,7 @@ section::before {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
+/*
 section:hover::before {
     opacity: 1;
 }
@@ -188,13 +190,12 @@ section:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
-
+*/
 section h2 {
     margin-bottom: 20px;
     color: var(--highlight);
     font-size: 1.6rem;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
     display: inline-block;
@@ -240,6 +241,7 @@ section h2::after {
 .input-group input {
     flex: 1;
     margin-bottom: 0;
+    margin-top: 15px;
 }
 
 .input-group .add-btn {
@@ -250,7 +252,7 @@ section h2::after {
 }
 
 .input-group .add-btn:hover {
-    background: var(--success-hover);
+    background: rgba(3, 90, 0, 0.438)
 }
 
 input[type="text"] {
@@ -308,22 +310,14 @@ button::before {
     transition: width 0.6s, height 0.6s;
 }
 
-button:hover::before {
-    width: 300px;
-    height: 300px;
-}
 
-button:hover {
-    background: var(--success-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
+
 
 button:active {
     transform: translateY(0);
-    box-shadow: var(--shadow-sm);
+    
 }
-
+/*
 #startRoundButton {
     width: 100%;
     background: var(--secondary);
@@ -335,6 +329,7 @@ button:active {
 #startRoundButton:hover {
     background: var(--secondary-hover);
 }
+*/
 
 .finish-race-btn {
     display: block;
@@ -343,17 +338,17 @@ button:active {
     font-size: 1.3rem;
     padding: 18px 32px;
     border: 3px solid var(--highlight);
-    box-shadow: 0 0 25px rgba(255, 107, 0, 0.5), var(--shadow-lg);
-    animation: pulseGlow 2s infinite;
+
+    
     border-radius: 12px;
 }
 
 .finish-race-btn:hover {
     background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 0 40px rgba(255, 107, 0, 0.7), var(--shadow-lg);
+    
 }
-
+/*
 @keyframes pulseGlow {
     0%, 100% {
         box-shadow: 0 0 25px rgba(255, 107, 0, 0.5), var(--shadow-md);
@@ -362,18 +357,18 @@ button:active {
         box-shadow: 0 0 40px rgba(255, 107, 0, 0.7), var(--shadow-md);
     }
 }
-
+*/
 .dsq-btn {
     background: var(--error);
     padding: 8px 16px;
     font-size: 0.85rem;
     border-radius: 8px;
 }
-
+/*
 .dsq-btn:hover {
     background: var(--error-hover);
 }
-
+*/
 .remove-btn {
     background: var(--error);
     padding: 6px 12px;
@@ -382,7 +377,7 @@ button:active {
 }
 
 .remove-btn:hover {
-    background: var(--error-hover);
+    background: rgba(121, 5, 5, 0.336);
 }
 
 .delete-round-btn {
@@ -395,7 +390,7 @@ button:active {
 }
 
 .delete-round-btn:hover {
-    background: var(--error-hover);
+    background: rgba(121, 5, 5, 0.336);
 }
 
 ul {
@@ -419,15 +414,15 @@ li {
     font-size: 1.05rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    animation: slideIn 0.4s ease-out;
+    
 }
-
+/*
 li:hover {
     background: var(--card-bg-hover);
     border-color: var(--secondary);
     transform: translateX(4px);
 }
-
+*/
 li span {
     flex: 1;
 }
@@ -442,11 +437,11 @@ li span {
 .info-box {
     flex: 1;
     min-width: 150px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    /* background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%); */
     padding: 12px 16px;
     border-radius: 10px;
     border: 2px solid var(--highlight);
-    box-shadow: var(--shadow-md);
+    
 }
 
 .info-box-label {
@@ -462,7 +457,7 @@ li span {
     font-size: 1.2rem;
     font-weight: 800;
     color: var(--text-color);
-    text-transform: uppercase;
+    
 }
 
 #timesSection {
@@ -488,11 +483,11 @@ li span {
     transition: all 0.3s ease;
 }
 
-#timesList > div:hover {
+/*#timesList > div:hover {
     background: var(--card-bg-hover);
     border-color: var(--secondary);
 }
-
+*/
 #timesList strong {
     font-size: 1.05rem;
     color: var(--secondary);
@@ -513,11 +508,11 @@ li span {
     background: var(--primary);
     font-size: 1.1rem;
 }
-
+/*
 #finishRoundButton:hover {
     background: var(--primary-hover);
 }
-
+*/
 #resultsSection {
     max-height: calc(100vh - 120px);
     overflow-y: auto;
@@ -538,11 +533,11 @@ li span {
     background: var(--primary);
     border-radius: 10px;
 }
-
+/*
 #resultsSection::-webkit-scrollbar-thumb:hover {
     background: var(--primary-hover);
 }
-
+*/
 #resultsSection h2 {
     font-size: 1.8rem;
     margin-bottom: 24px;
@@ -560,13 +555,13 @@ li span {
     padding: 16px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
-    animation: fadeInUp 0.5s ease-out;
+    
 }
-
+/*
 #results > div:hover {
     border-color: var(--primary);
 }
-
+*/
 .round-header {
     display: flex;
     gap: 12px;
@@ -628,33 +623,33 @@ li span {
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
-
+/*
 .result-row:hover,
 .results-row:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-md);
 }
-
+*/
 .first {
     background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
     color: #000000;
     border-color: #ffd700;
-    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
-    animation: pulse 2s infinite;
+    
+    
 }
 
 .second {
     background: linear-gradient(135deg, var(--silver) 0%, #e0e0e0 100%);
     color: #000000;
     border-color: #c0c0c0;
-    box-shadow: 0 4px 16px rgba(192, 192, 192, 0.4);
+    
 }
 
 .third {
     background: linear-gradient(135deg, var(--bronze) 0%, #e09856 100%);
     color: #000000;
     border-color: #cd7f32;
-    box-shadow: 0 4px 16px rgba(205, 127, 50, 0.4);
+    
 }
 
 .toggle-standings-btn {
@@ -664,11 +659,11 @@ li span {
     font-size: 1rem;
     padding: 12px 24px;
 }
-
+/*
 .toggle-standings-btn:hover {
     background: var(--secondary-hover);
 }
-
+*/
 .overall-standings-container {
     margin-top: 24px;
     border: 3px solid var(--highlight);
@@ -690,7 +685,7 @@ li span {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    animation: fadeIn 0.3s ease-out;
+    
     padding: 20px;
 }
 
@@ -703,7 +698,7 @@ li span {
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 107, 0, 0.4);
     border: 3px solid var(--highlight);
-    animation: scaleIn 0.4s ease-out;
+    animation: slideUp 2s ease-out;
     display: flex;
     flex-direction: column;
 }
@@ -730,8 +725,8 @@ li span {
     font-size: 2.5rem;
     color: var(--text-color);
     margin: 0;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    animation: pulse 2s infinite;
+    
+    
 }
 
 .modal-header h2::after {
@@ -787,12 +782,12 @@ li span {
     gap: 20px;
     align-items: center;
 }
-
+/*
 .final-result-row:hover {
     transform: scale(1.03);
     box-shadow: var(--shadow-lg);
 }
-
+*/
 .final-result-position {
     font-size: 1.4rem;
     font-weight: 900;
@@ -1058,7 +1053,7 @@ footer {
     font-family: sans-serif;
     color: gray;
     text-align: center;
-    margin-bottom: 10px;
+    grid-column: 2; 
 }
 
 .github-hosting {
@@ -1102,7 +1097,7 @@ footer {
     filter: grayscale(0%);
 }
 
-/* CRITICAL: Force black text on medals - MUST BE AT THE END */
+
 .result-row.first,
 .result-row.first *,
 .results-row.first,
@@ -1143,4 +1138,136 @@ footer {
 .final-result-row.third .final-result-total,
 .final-result-row.third .final-result-diff {
     color: #000000 !important;
+}
+
+.result-row:not(.first):not(.second):not(.third),
+.result-row:not(.first):not(.second):not(.third),
+.final-result-row:not(.first):not(.second):not(.third)
+{
+    color: #ffffff !important;
+}
+
+.final-result-row:not(.first):not(.second):not(.third) *
+{
+    color: #ffffff !important;
+}
+
+
+
+
+
+
+
+
+
+div[class*=box]
+{
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+.btn-one {
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+    background-color: rgba(0, 204, 255, 0.3);
+}
+.btn-one span {
+    transition: all 0.3s;
+}
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 10px);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(0, 0, 0, 0.5);
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+    letter-spacing: 2px;
+}
+.btn-one:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+}
+.btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.014);
+}
+.btn-one:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+}
+
+
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(35px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+
+
+.reset-all-btn 
+{
+    width: 100%;
+    background: var(--error);
+    font-size: 0.95rem;
+    grid-column: 3;
+    justify-self: end;
+    width: 37.5%;
+    
+}
+
+.reset-all-btn:hover
+{
+    background: rgba(121, 5, 5, 0.336);
+}
+
+.footer-bottom
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: 10px;
 }
