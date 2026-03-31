@@ -61,7 +61,7 @@ No frameworks. No dependencies. Pure front-end.
 - [x] **Cleaner animation system**  
 - [x] **Refactored gradients & styling**
 - [x] **UI polish** 
-- [x]**Codebase cleanup**  
+- [x] **Codebase cleanup**  
 
 ---
 
