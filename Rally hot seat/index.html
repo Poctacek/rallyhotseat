@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rally Hot-Seat Web</title>
+<link rel="stylesheet" href="style.css?v=7">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+</head>
+<!--
+> DSQ is concidered 15:00:000 (this will be customizable in the future)
+> Website info is in the README on GitHub
+-->
+
+
+<body>
+    <div id="app">
+        <header>
+            <h1><span class="rallyword">Rally </span>Hot-Seat</h1>
+        </header>
+
+        <main>
+            <section id="driversSection">
+                <h2>Add Drivers</h2>
+                <div class="input-group">
+                    <input type="text" id="addDriverInput" placeholder="Driver's Name">
+                    <button id="addDriverButton" class="add-btn">Add Driver</button>
+                </div>
+                <ul id="driversList"></ul>
+            </section>
+
+            <section id="roundSection">
+                <h2>Start Round</h2>
+
+
+
+
+
+                <!--
+                <input type="text" id="stageInput" placeholder="Stage Name (- country)">
+                <input type="text" id="carInput" placeholder="Car Name (- model)"> 
+
+
+
+                <div class="box-1">
+                    <div class=" btn btn-one" id="startRoundButton" role="button" tabindex="0">
+                        <span>
+                        <button id="startRoundButton">Start Round</button>
+                            Start Round
+                        </span>
+                    </div>
+                </div>
+            -->
+
+
+
+<!-- Replace the stageInput, carInput, and box-1 div in #roundSection with this: -->
+
+<!-- Hidden inputs that store the selected values -->
+<input type="hidden" id="stageInput">
+<input type="hidden" id="carInput">
+
+<!-- Display of current selection -->
+<div id="selectionDisplay" class="selection-display">
+    <div class="selection-item" id="stageDisplay">
+        <span class="selection-label">Stage</span>
+        <span class="selection-value" id="stageDisplayValue">Not selected</span>
+    </div>
+    <div class="selection-divider"></div>
+    <div class="selection-item" id="carDisplay">
+        <span class="selection-label">Car</span>
+        <span class="selection-value" id="carDisplayValue">Not selected</span>
+    </div>
+</div>
+
+<!-- Choose button (replaces the old Start Round button area) -->
+<div class="box-1">
+    <div class="btn btn-two" id="openSelectorButton" role="button" tabindex="0">
+        <span>Choose Stage & Car</span>
+    </div>
+</div>
+<div class="box-1" style="margin-top: 10px;">
+    <div class="btn btn-one" id="startRoundButton" role="button" tabindex="0">
+        <span>Start Round</span>
+    </div>
+</div>
+
+
+<!-- Stage & Car Selector Modal -->
+<div id="stageSelectorModal" class="modal hidden">
+    <div class="selector-modal-content">
+
+        <!-- Game tabs -->
+        <div class="game-tabs">
+            <button class="game-tab active" data-game="dr2">Dirt Rally 2.0</button>
+            <button class="game-tab" data-game="wrc">WRC</button>
+            <button class="game-tab" data-game="other">Other</button>
+        </div>
+
+        
+        <div class="selector-body" id="selectorBody">
+
+            <div class="selector-columns">
+                <!-- Stages column -->
+                <div class="selector-col">
+                    <h3 class="col-title">Stage</h3>
+                    <div class="groups-container" id="stageGroups"></div>
+                </div>
+
+                <!-- Cars column -->
+                <div class="selector-col">
+                    <h3 class="col-title">Car</h3>
+                    <div class="groups-container" id="carGroups"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Other game content -->
+        <div class="other-body hidden" id="otherBody">
+            <div class="other-inputs">
+                <input type="text" id="otherStageInput" placeholder="Stage Name (- country)">
+                <input type="text" id="otherCarInput" placeholder="Car Name (- model)">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="selector-footer">
+            <div class="selector-preview">
+                <span id="previewStage" class="preview-item">No stage selected</span>
+                <span class="preview-sep">·</span>
+                <span id="previewCar" class="preview-item">No car selected</span>
+            </div>
+            <div class="selector-footer-btns">
+                <button id="cancelSelectorButton" class="cancel-selector-btn">Cancel</button>
+                <button id="confirmSelectorButton" class="confirm-selector-btn">Confirm</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+            
+            </section>
+
+            
+            <section id="finishRaceSection" class="hidden finish-race-section">
+                <h2> Race Control</h2>
+                <button id="finishRaceButton" class="finish-race-btn">
+                    Finish Race & View Final Results
+                </button>
+            </section>
+
+            <section id="timesSection" class="hidden">
+                <h2>Enter Times</h2>
+                <div id="roundInfo" class="round-info"></div>
+                <div id="timesList"></div>
+                <button id="finishRoundButton">Finish This Round</button>
+            </section>
+
+            <section id="resultsSection">
+                <h2>Results</h2>
+                <div id="results"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Final Results Modal -->
+    <div id="finalResultsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Race Results</h2>
+            </div>
+            <div class="modal-body" id="finalResultsBody"></div>
+        <div class="modal-footer">
+    <div class="modal-button-group">
+        <button id="continueRaceButton" class="continue-race-btn">← Continue Race</button>
+        <button id="closeModalButton" class="close-modal-btn">Start New Race</button>
+    </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./script.js?v=6"></script>
+</body>
+<footer>
+
+    <div class="footer-bottom">
+        <div class="note">
+            *DSQ is concidered 15 minutes at this point.
+        </div>
+        <div class="github-hosting">
+            <span class="github-text">This website is being hosted by GitHub</span>
+            <a href="https://github.com/poctacek" target="_blank">
+            <img src="./img/github_logo.png" alt="GitHub" class="github-icon">
+            </a>
+        </div>
+        <button id ="resetAllButton" class="reset-all-btn">Reset All</button>
+    </div>
+
+
+</footer>
+
+</html>
