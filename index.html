@@ -13,21 +13,14 @@
 </head>
 <!--
 > DSQ is concidered 15:00:000 (this will be customizable in the future)
-> The website works like this:
-                            - You add your racers
-                            - You start a round by stating the car and the stage name (or country name)
-                            - a box will pop up, where you put the times of the players in this format - 00:00:000
-                            - then you finish the round and create another one
-                            - after you finished all your games, you can finish the race
-                            - a popup will show you your times and differences
-                            - then you can either clear all the races or go back to the race
+> Website info is in the README on GitHub
 -->
 
 
 <body>
     <div id="app">
         <header>
-            <h1>Rally Hot-Seat</h1>
+            <h1><span class="rallyword">Rally </span>Hot-Seat</h1>
         </header>
 
         <main>
@@ -42,22 +35,129 @@
 
             <section id="roundSection">
                 <h2>Start Round</h2>
+
+
+
+
+
+                <!--
                 <input type="text" id="stageInput" placeholder="Stage Name (- country)">
-                <input type="text" id="carInput" placeholder="Car Name (- model)">
+                <input type="text" id="carInput" placeholder="Car Name (- model)"> 
+
+
+
                 <div class="box-1">
                     <div class=" btn btn-one" id="startRoundButton" role="button" tabindex="0">
                         <span>
-                        <!-- <button id="startRoundButton">Start Round</button> -->
+                        <button id="startRoundButton">Start Round</button>
                             Start Round
                         </span>
                     </div>
                 </div>
+            -->
+
+
+
+<!-- Replace the stageInput, carInput, and box-1 div in #roundSection with this: -->
+
+<!-- Hidden inputs that store the selected values -->
+<input type="hidden" id="stageInput">
+<input type="hidden" id="carInput">
+
+<!-- Display of current selection -->
+<div id="selectionDisplay" class="selection-display">
+    <div class="selection-item" id="stageDisplay">
+        <span class="selection-label">Stage</span>
+        <span class="selection-value" id="stageDisplayValue">Not selected</span>
+    </div>
+    <div class="selection-divider"></div>
+    <div class="selection-item" id="carDisplay">
+        <span class="selection-label">Car</span>
+        <span class="selection-value" id="carDisplayValue">Not selected</span>
+    </div>
+</div>
+
+<!-- Choose button (replaces the old Start Round button area) -->
+<div class="box-1">
+    <div class="btn btn-two" id="openSelectorButton" role="button" tabindex="0">
+        <span>Choose Stage & Car</span>
+    </div>
+</div>
+<div class="box-1" style="margin-top: 10px;">
+    <div class="btn btn-one" id="startRoundButton" role="button" tabindex="0">
+        <span>Start Round</span>
+    </div>
+</div>
+
+
+<!-- Stage & Car Selector Modal -->
+<div id="stageSelectorModal" class="modal hidden">
+    <div class="selector-modal-content">
+
+        <!-- Game tabs -->
+        <div class="game-tabs">
+            <button class="game-tab active" data-game="dr2">Dirt Rally 2.0</button>
+            <button class="game-tab" data-game="wrc">WRC</button>
+            <button class="game-tab" data-game="other">Other</button>
+        </div>
+
+        
+        <div class="selector-body" id="selectorBody">
+
+            <div class="selector-columns">
+                <!-- Stages column -->
+                <div class="selector-col">
+                    <h3 class="col-title">Stage</h3>
+                    <div class="groups-container" id="stageGroups"></div>
+                </div>
+
+                <!-- Cars column -->
+                <div class="selector-col">
+                    <h3 class="col-title">Car</h3>
+                    <div class="groups-container" id="carGroups"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Other game content -->
+        <div class="other-body hidden" id="otherBody">
+            <div class="other-inputs">
+                <input type="text" id="otherStageInput" placeholder="Stage Name (- country)">
+                <input type="text" id="otherCarInput" placeholder="Car Name (- model)">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="selector-footer">
+            <div class="selector-preview">
+                <span id="previewStage" class="preview-item">No stage selected</span>
+                <span class="preview-sep">·</span>
+                <span id="previewCar" class="preview-item">No car selected</span>
+            </div>
+            <div class="selector-footer-btns">
+                <button id="cancelSelectorButton" class="cancel-selector-btn">Cancel</button>
+                <button id="confirmSelectorButton" class="confirm-selector-btn">Confirm</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+            
             </section>
 
             
             <section id="finishRaceSection" class="hidden finish-race-section">
                 <h2> Race Control</h2>
-                <p class="race-control-text">Are you ready to end the race and see final results?</p>
                 <button id="finishRaceButton" class="finish-race-btn">
                     Finish Race & View Final Results
                 </button>
