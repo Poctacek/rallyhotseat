@@ -641,19 +641,19 @@ const GAME_DATA = {
             },
             {
                 group: "Group A",
-                items: ["Mitsubishi Lancer Evolution VI","Subaru Impreza (1995)","Subaru Legacy RS","Lancia Delta HF integrale","Ford Escort RS Cosworth"]
+                items: ["Mitsubishi Lancer Evolution VI","SUBARU Impreza (1995)","SUBARU Legacy RS","Lancia Delta HF integrale","Ford Escort RS Cosworth"]
             },
             {
                 group: "NR4/R4",
-                items: ["Subaru WRX STI NR4","Mitsubishi Lancer Evolution X"]
+                items: ["SUBARU WRX STI NR4","Mitsubishi Lancer Evolution X"]
             },
             {
                 group: "4WD 2000cc",
-                items: ["Škoda Fabia Rally","Citroen C4 Rally","Ford Focus RS Rally (2001)","Subaru Impreza S4 Rally","Subaru Impreza (2001)","Ford Focus RS Rally (2007)","Subaru Impreza","Peugeot 206 Rally"]
+                items: ["ŠKODA Fabia Rally","Citroën C4 Rally","Ford Focus RS Rally (2001)","SUBARU Impreza S4 Rally","SUBARU Impreza (2001)","Ford Focus RS Rally (2007)","SUBARU Impreza","Peugeot 206 Rally"]
             },
             {
                 group: "R5",
-                items: ["Ford Fiesta R5","Peugeot 208 R5 T16","Vokswagen Polo GTI R5","Mitsubishi Space Star R5","Škoda Fabia R5","Citroen C4 R5","Ford Fiesta R5 MKII"]
+                items: ["Ford Fiesta R5","Peugeot 208 R5 T16","Vokswagen Polo GTI R5","Mitsubishi Space Star R5","ŠKODA Fabia R5","Citroën C4 R5","Ford Fiesta R5 MKII"]
             },
             {
                 group: "Rally GT",
@@ -751,14 +751,87 @@ const GAME_DATA = {
         ],
         cars: [
             {
-                group: "Not yet completed - please use the 'Other' tab to add custom cars for now",
-                items: [""]
+                group: "WRC",
+                items: ["Ford Puma Rally1 HYBRID (2023)","Ford Puma Rally1 HYBRID (2024)","Hyundai i20 N Rally1 HYBRID (2023)","Hyundai i20 N Rally1 HYBRID (2024)","Toyota GR Yaris Rally1 HYBRID (2023)","Toyota GR Yaris Rally1 HYBRID (2024)","WRC Builder Vehicle"]
             },
-            /*{
+            {
                 group: "WRC2",
-                items: ["Skoda Fabia RS Rally2", "Citroen C3 Rally2"]
-            },*/
-            // add more...
+                items:["Citroën C3 Rally2","Ford Fiesta Rally2","Hyundai i20 N Rally","ŠKODA Fabia Rally2 Evo","ŠKODA Fabia RS Rally2","Toyota GR Yarsi Rally2","Volkswagen Polo GTI R5","WRC2 Builder Vehicle"]
+            },
+                        {
+                group: "Junior WRC",
+                items:["Ford Fiesta Rally3","Ford Fiesta Rally3 Evo","Junior WRC Builder Vehicle"]
+            },
+            
+            {
+                group: "World Rally Car: 2017-2021",
+                items:["Citroën C3 WRC","Ford Fiesta WRC","Hyundai i20 Coupe WRC (2021)","Volkswagen Polo 2017"]
+            },
+            {
+                group: "World Rally Car: 2012-2016",
+                items:["Citroën DS3 WRC (2012)","Volkswagen Polo R WRC (2013)","MINI John Cooper Works WRC"]
+            },
+            {
+                group: "World Rally Car: 1997-2011",
+                items:["Citroën C4 WRC","Citroën Xsara WRC","Ford Focus WRC (1999)","Ford Focus RS Rally 2001","Ford Focus RS Rally 2008","MINI Countryman Rally Edition","Mitsubishi Lancer Evolution VI","Peugeot 206 Rally","Seat Córdoba WRC","ŠKODA Fabia WRC","SUBARU Impreza 1998","SUBARU Impreza 2001","SUBARU Impreza 2008"]
+            },
+            {
+                group: "Rally2",
+                items:["Ford Fiesta R5 MK7 Evo 2","Peugeot 208 T16 R5","ŠKODA Fabia Rally2 Evo","ŠKODA Fabia RS Rally2","Volkswagen Polo GTI R5"]
+            },
+            {
+                group: "Rally3",
+                items:["Ford Fiesta Rally3","Renault Clio Rally3"]
+            },
+            {
+                group: "Rally4",
+                items:["Citroën C2 R2 Max","Ford Fiesta MK8 Rally4","Opel Adam R2","Opel Corsa Rally4","Peugeot 208 Rally4","Renault Clio Rally4","Renault Twingo II"]
+            },
+            {
+                group: "NR4/R4",
+                items:["McRae R4","Mitsubishi Lancer Evolution X","SUBARU WRX STI NR4"]
+            },
+            {
+                group: "S2000",
+                items:["Fiat Grande Punto Abarth S2000","Opel Corsa S2000","Peugeot 207 S2000"]
+            },
+            {
+                group: "S1600",
+                items:["Citroën C2 Super 1600","Citroën Saxo Super 1600","Ford Puma S1600","Peugoet 206 S1600","Renault Clio S1600"]
+            },
+            {
+                group: "F2 Kit Car",
+                items:["Citroën Xsara Kit Car","Ford Escort Mk 6 Maxi","Peugeot 306 Maxi","Renault Maxi Mégane","Seat Ibiza Kit Car","Vauxhall Astra Rally Car","Volkswagen Golf IV Kit Car"]
+            },
+            {
+                group: "Group A",
+                items:["Ford Escort RS Cosworth","Lancia Delta HF Integrale","Mitsubshi Galant VR4","SUBARU Impreza 1995","SUBARU Legacy RS"]
+            },
+            {
+                group: "Group B 4WD",
+                items:["Audi Sport quattro S1 (E2)","Ford RS200","Lancia Delta S4","MG Metro 6R4","Peugeot 205 T16 Evo 2"]
+            },
+            {
+                group: "Group B RWD",
+                items:["BMW M1 Procar Rally","Lancia 037 Evo 2","Opel Manta 400","Porsche 911 SC RS"]
+            },
+            {
+                group: "H3 RWD",
+                items:["BMW M3 Evo Rally","Ford Escort MK2 McRae Motorsport","Ford Sierra Cosworth RS500","Lancia Stratos","Opel Ascona 400","Renault 5 Turbo"]
+            },
+            {
+                group: "H2 RWD",
+                items:["Alpine Renault A110 1600 S","Fiat 131 Abarth Rally","Ford Escort MK2","Ford Escort RS 1600 MK1","Hillman Avenger","Opel Kadett C GT/E","Talbot Sunbeam Lotus"]
+            },
+            {
+                group: "H2 FWD",
+                items:["Peugeot 205 GTI","Peugeot 309 GTI","Volkswagen Golf GTI"]
+            },
+            {
+                group: "H1 FWD",
+                items:["Lancia Fulvia HF","MINI Cooper S","Vauxhall Nova Sport"]
+            },
+
         ]
     }
 };
@@ -833,6 +906,77 @@ function renderGameData(game) {
 
 // ill be making this so its a roll down :)
 function renderGroups(container, groups, type) {
+    container.innerHTML='';
+    groups.forEach(group =>{
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'item-group';
+
+        const label = document.createElement('div');
+        label.className = 'group-label group-label-toggle';
+        label.innerHTML = `<span>${group.group}</span><span class="group-arrow">></span>`;
+        groupDiv.appendChild(label);
+
+        const itemsDiv = document.createElement('div');
+        itemsDiv.className = 'group-items hidden';
+
+        group.items.forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'select-item';
+            btn.textContent = item;
+
+            if (type === 'stage' && item === selectedStage)
+            {
+                btn.classList.add('selected');
+                itemsDiv.classList.remove('hidden');
+                label.querySelector('.group-arrow').textContent = 'v';
+            }
+            if (type === 'car' && item === selectedCar)
+            {
+                btn.classList.add('selected');
+                itemsDiv.classList.remove('hidden');  
+                label.querySelector('.group-arrow').textContent = 'v';
+            }
+
+
+
+            btn.addEventListener('click', () => {
+                container.querySelectorAll('.select-item').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+
+                if (type === 'stage') selectedStage = item;
+                else selectedCar = item;
+                updatePreview();
+                updateConfirmButton();
+            });
+            itemsDiv.appendChild(btn);
+        });
+            label.addEventListener('click', () => {
+                const isHidden = itemsDiv.classList.toggle('hidden');
+                label.querySelector('.group-arrow').textContent = isHidden ? '>' : 'v';
+            });
+
+            groupDiv.appendChild(itemsDiv);
+            container.appendChild(groupDiv);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* original
     container.innerHTML = '';
     groups.forEach(group => {
         const groupDiv = document.createElement('div');
@@ -867,7 +1011,7 @@ function renderGroups(container, groups, type) {
         container.appendChild(groupDiv);
     });
 }
-
+*/
 function updatePreview() {
     previewStage.textContent = selectedStage || 'No stage selected';
     previewStage.classList.toggle('has-value', !!selectedStage);

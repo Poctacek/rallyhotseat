@@ -47,11 +47,12 @@ This project was originally only meant as a web for me and my friends (also one 
 
 This will prolly not have many updates, but I 100% want to improve/add some things, for example:
 
-- [ ] Remake the visuals of the background and maybe the color palette
+- [x] Remake the visuals of the background and maybe the color palette
 
-- [ ] Add a choice for what game you're playing
+- [x] Add a choice for what game you're playing
 
-- [ ] From your game choice, add a list of cars and stages so you don't have to type it out
+- [x] From your game choice, add a list of cars and stages so you don't have to type it out
+    -   <sub><sup>*If I missed something or you want a stage/car to be added shoot me a DM or an e-mail ;)*</sub></sup>
 
 - [ ] Overall code cleanup
 

@@ -708,7 +708,7 @@ li span {
     width: 100%;
     max-height: 90vh;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 107, 0, 0.4);
+    
     border: 3px solid var(--highlight);
     animation: slideUp 2s ease-out;
     display: flex;
@@ -766,14 +766,13 @@ li span {
 
 .final-standings {
     background: var(--background-secondary);
-    
     padding: 20px;
     border: 2px solid var(--border-color);
 }
 
 .final-standings h3 {
     font-size: 1.8rem;
-    color: var(--highlight);
+    color: #FFF;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -1635,3 +1634,43 @@ div[class*=box]
         flex: 1;
     }
 }
+
+.group-label-toggle
+{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    user-select: none;
+}
+
+.group-label-toggle:hover
+{
+    background: var(--background-secondary);
+}
+
+.group-arrow {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+}
+
+.group-items.hidden
+{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
