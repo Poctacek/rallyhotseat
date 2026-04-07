@@ -54,9 +54,10 @@ This will prolly not have many updates, but I 100% want to improve/add some thin
 - [x] From your game choice, add a list of cars and stages so you don't have to type it out
     -   <sub><sup>*If I missed something or you want a stage/car to be added shoot me a DM or an e-mail ;)*</sub></sup>
 
-- [ ] Overall code cleanup
+- [x] Overall code cleanup
 
-- [ ] Better phone handling
+- [x] Better phone handling
+    -   <sub><sup><sub><sup>*This is very much imo, so if you spot any bugs on the phone, I would be more than happy if you tell me (via DM or e-mail or whatevs)*</sub></sup></sub></sup>
 
 
 ## Where to use

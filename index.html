@@ -40,31 +40,10 @@
 
 
 
-                <!--
-                <input type="text" id="stageInput" placeholder="Stage Name (- country)">
-                <input type="text" id="carInput" placeholder="Car Name (- model)"> 
-
-
-
-                <div class="box-1">
-                    <div class=" btn btn-one" id="startRoundButton" role="button" tabindex="0">
-                        <span>
-                        <button id="startRoundButton">Start Round</button>
-                            Start Round
-                        </span>
-                    </div>
-                </div>
-            -->
-
-
-
-<!-- Replace the stageInput, carInput, and box-1 div in #roundSection with this: -->
-
-<!-- Hidden inputs that store the selected values -->
 <input type="hidden" id="stageInput">
 <input type="hidden" id="carInput">
 
-<!-- Display of current selection -->
+
 <div id="selectionDisplay" class="selection-display">
     <div class="selection-item" id="stageDisplay">
         <span class="selection-label">Stage</span>
@@ -77,7 +56,7 @@
     </div>
 </div>
 
-<!-- Choose button (replaces the old Start Round button area) -->
+
 <div class="box-1">
     <div class="btn btn-two" id="openSelectorButton" role="button" tabindex="0">
         <span>Choose Stage & Car</span>
@@ -90,11 +69,9 @@
 </div>
 
 
-<!-- Stage & Car Selector Modal -->
 <div id="stageSelectorModal" class="modal hidden">
     <div class="selector-modal-content">
 
-        <!-- Game tabs -->
         <div class="game-tabs">
             <button class="game-tab active" data-game="dr2">Dirt Rally 2.0</button>
             <button class="game-tab" data-game="wrc">WRC</button>
@@ -105,13 +82,11 @@
         <div class="selector-body" id="selectorBody">
 
             <div class="selector-columns">
-                <!-- Stages column -->
                 <div class="selector-col">
                     <h3 class="col-title">Stage</h3>
                     <div class="groups-container" id="stageGroups"></div>
                 </div>
 
-                <!-- Cars column -->
                 <div class="selector-col">
                     <h3 class="col-title">Car</h3>
                     <div class="groups-container" id="carGroups"></div>
@@ -120,7 +95,6 @@
 
         </div>
 
-        <!-- Other game content -->
         <div class="other-body hidden" id="otherBody">
             <div class="other-inputs">
                 <input type="text" id="otherStageInput" placeholder="Stage Name (- country)">
@@ -128,7 +102,6 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="selector-footer">
             <div class="selector-preview">
                 <span id="previewStage" class="preview-item">No stage selected</span>
@@ -177,7 +150,6 @@
         </main>
     </div>
 
-    <!-- Final Results Modal -->
     <div id="finalResultsModal" class="modal hidden">
         <div class="modal-content">
             <div class="modal-header">

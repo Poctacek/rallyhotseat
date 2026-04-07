@@ -7,8 +7,6 @@ let showOverallStandings = false;
 const addDriverInput = document.getElementById('addDriverInput');
 const addDriverButton = document.getElementById('addDriverButton');
 const driversList = document.getElementById('driversList');
-// const stageInput = document.getElementById('stageInput');
-// const carInput = document.getElementById('carInput');
 const startRoundButton = document.getElementById('startRoundButton');
 const finishRaceSection = document.getElementById('finishRaceSection');
 const finishRaceButton = document.getElementById('finishRaceButton');
@@ -976,7 +974,7 @@ function renderGroups(container, groups, type) {
 
 
 
-    /* original
+    /* original way for it not being roll down
     container.innerHTML = '';
     groups.forEach(group => {
         const groupDiv = document.createElement('div');
