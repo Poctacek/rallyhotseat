@@ -831,6 +831,73 @@ const GAME_DATA = {
             },
 
         ]
+    },
+
+    ACR: {
+        stages: [
+            {
+                group: "Alsace (Frace)",
+                items: ["Vallé de Munster Descente","Vallé de Munster Montée","Forêt de Munster","Luttenbach près Munster","Col du petit Ballon","Sommet de Munster","Steigenbach","Forêt de Saverne","Obersteigen","La traversée de La Mossig"]
+            },
+            {
+                group: "Wales",
+                items: ["Cwmbiga – Afon Biga",
+                        "Afron Biga – Cwmbiga",
+                        "Cwmbiga – Fedw Fain",
+                        "Fedw Fain – Cwmbiga",
+                        "Banc Gwyn – Afon Biga",
+                        "Afon Biga – Banc Gwyn",
+                        "Afon Bidno – Severn",
+                        "Severn – Afon Bidno"
+                ]
+            },
+            {
+                group: "Livigno Circuit (Italy)",
+                items: ["Ghiacciodromo Livigno – Main Circuit – Main Circuit Reverse"]
+
+            },
+            {
+                group:"Monte Carlo",
+                items: ["La Bollène-Vésubie","Sisteron"]
+            }
+        ],
+        cars: [
+            {
+                group: "WRC",
+                items: ["Citroen Xsara WRC 2003"]
+            },
+            {
+                group: "Rally2",
+                items: ["Hyundai i20N Rally2 2021"/*,"Skoda Fabia RS Rally2 (coming 2026)"*/]
+            },
+            {
+                group: "Group A",
+                items: ["Lancia Delta HF Integrale Evoluzione 1992"]
+            },
+            {
+                group: "Group B",
+                items: ["Lancia Rally 037 EVO 2 Gr.B 1984"]
+            },
+            {
+                group: "Rally 4",
+                items: ["Peugeot 208 Rally4 2020"]
+
+            },
+            {
+                group: "Group 2",
+                items: ["Alfa Romeo GTA 1300 Junior Gr.2 1972","Lancia Fulvia Coupe HF 1600","Lancia Stratos Gr.4 1976","Mini Cooper S Gr.2 1964"]
+            },
+            {
+                group: "Group 4",
+                items: ["Alpine A110 Group 4 1973",
+                         "Fiat 124 Sport Abarth Rally 16V Gr.4 1973",
+                         "Fiat 131 Abarth GR.4 1976"]
+            }
+
+
+
+
+        ]
     }
 };
 
