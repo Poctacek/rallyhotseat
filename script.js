@@ -795,7 +795,7 @@ const GAME_DATA = {
             },
             {
                 group: "S1600",
-                items:["Citroën C2 Super 1600","Citroën Saxo Super 1600","Ford Puma S1600","Peugoet 206 S1600","Renault Clio S1600"]
+                items:["Citroën C2 Super 1600","Citroën Saxo Super 1600","Ford Puma S1600","Peugeot 206 S1600","Renault Clio S1600"]
             },
             {
                 group: "F2 Kit Car",
@@ -864,34 +864,38 @@ const GAME_DATA = {
         cars: [
             {
                 group: "WRC",
-                items: ["Citroen Xsara WRC 2003"]
+                items: ["Citroen Xsara WRC"]
             },
             {
                 group: "Rally2",
-                items: ["Hyundai i20N Rally2 2021"/*,"Skoda Fabia RS Rally2 (coming 2026)"*/]
+                items: ["Hyundai i20N Rally2","Škoda Fabia RS Rally2"]
             },
             {
                 group: "Group A",
-                items: ["Lancia Delta HF Integrale Evoluzione 1992"]
+                items: ["Lancia Delta HF Integrale Evoluzione","Subaru Impreza S3"]
             },
             {
                 group: "Group B",
-                items: ["Lancia Rally 037 EVO 2 Gr.B 1984"]
+                items: ["Lancia Rally 037 EVO 2 Gr.B"]
             },
             {
                 group: "Rally 4",
-                items: ["Peugeot 208 Rally4 2020"]
+                items: ["Peugeot 208 Rally4"]
 
             },
             {
                 group: "Group 2",
-                items: ["Alfa Romeo GTA 1300 Junior Gr.2 1972","Lancia Fulvia Coupe HF 1600","Lancia Stratos Gr.4 1976","Mini Cooper S Gr.2 1964"]
+                items: ["Alfa Romeo GTA 1300 Junior Gr.2","Lancia Fulvia Coupe HF 1600","Lancia Stratos Gr.4","Mini Cooper S Gr.2"]
             },
             {
                 group: "Group 4",
-                items: ["Alpine A110 Group 4 1973",
-                         "Fiat 124 Sport Abarth Rally 16V Gr.4 1973",
-                         "Fiat 131 Abarth GR.4 1976"]
+                items: ["Alpine A110 Group 4",
+                         "Fiat 124 Sport Abarth Rally 16V Gr.4",
+                         "Fiat 131 Abarth GR.4"]
+            },
+            {
+                group: "Kit-Car",
+                items: ["Peugeot 306 Maxi"]
             }
 
 
